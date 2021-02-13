@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}{{pet.name}} Details{% endblock %}
+{% block content %}
+<main role="main" class="inner cover">
+    <h1 class="cover-heading">{{pet.name}} Details</h1>
+    <ul class="lead">
+        <li>Name: {{pet.name}}</li>
+        <li>Species: <a href="/species/{{pet.species}}">{{pet.species}}</a></li>
+        <li>Hunger: {{pet.hunger}}</li>
+    </ul>
+    <blockquote class="lead">{{pet.greet()}}</blockquote>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p><a href="/">Go Home</a></p>
+        </div>
+    </footer>
+</main>
+
+{% endblock %}

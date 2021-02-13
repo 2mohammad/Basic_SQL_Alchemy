@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}All Pets!{% endblock %}
+{% block content %}
+<main role="main" class="inner cover">
+<h1>All Pets</h1>
+    <ul>
+        {% for pet in pets %}
+        <li> <a href="/{{pet.id}}">{{pet.name}}</a></li>
+        {%endfor%}
+    </ul>
+    <h2>Make a new Pet</h2>
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <input class="form-control" type="text" name="name" placeholder="name">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="text" name="species" placeholder="species">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="number" name="hunger" placeholder="hunger">
+        </div>
+        <button class="btn btn-primary">Submit Pet</button>
+    </form>
+</main>
+{% endblock %}
